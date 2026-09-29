@@ -46,7 +46,7 @@ Every result is saved in a file, so you can check your progress later.
 - **Random sentences every time**, built from a built-in word list.
 - **Score report**: speed, accuracy, errors and time taken.
 - **History**: see your last 10 tests, your best speed and your average.
-- **Results saved automatically** in a CSV file, so you can check your stats anytime, even outside the program, by opening it in Excel, Google Sheets or a text editor.
+- **Results saved automatically** in a plain text file, so you can check your stats anytime, even outside the program, by opening it in Notepad or any text editor.
 - **Friendly error messages**: wrong input never crashes the program.
 
 [Back to menu](#menu)
@@ -60,8 +60,7 @@ Every result is saved in a file, so you can check your progress later.
 | Python 3.8 or newer | The programming language |
 | `time` | Timing your typing and the countdown |
 | `random` | Choosing random words for each sentence |
-| `csv` | Saving and reading your results |
-| `os` | Checking if the results file exists |
+| `os` | Checking whether the results file already exists |
 
 All of these come built into Python, so there is nothing extra to install.
 
@@ -136,7 +135,7 @@ Type the number and press **Enter**.
 
 ### Viewing your history
 
-Choose **2** from the main menu to see your last 10 tests, your best speed and your average speed. This same information is stored in `typing_results.csv`, so you can also open that file directly anytime, even without running the program.
+Choose **2** from the main menu to see your last 10 tests, your best speed and your average speed. This same information is stored in `typing_results.txt`, so you can also open that file directly anytime, even without running the program.
 
 ### Quitting
 
@@ -173,7 +172,7 @@ You can check that the program works correctly by trying these tests by hand.
 | 6 | Take another test and press Enter without typing | Speed is **0**, no crash |
 | 7 | Choose View history | Your tests appear in the table with a best and average speed |
 | 8 | Start a test and press **Ctrl + C** | "Test cancelled" is shown, nothing is saved |
-| 9 | Open `typing_results.csv` | One new row per finished test, with date, mode, WPM, accuracy, errors and seconds |
+| 9 | Open `typing_results.txt` | One new row per finished test, with date, mode, WPM, accuracy, errors and seconds |
 
 [Back to menu](#menu)
 
@@ -200,14 +199,14 @@ typing-speed-tester/
 ├── typing_speed_tester.py   The whole program
 ├── README.md                This file
 ├── statement.md             Problem statement and scope
-└── typing_results.csv       Created automatically after your first test
+└── typing_results.txt       Created automatically after your first test
 ```
 
 The program has three main parts:
 
 1. **Test engine**: shows sentences and runs the two modes.
 2. **Scoring**: calculates speed, accuracy and errors.
-3. **History**: saves and reads your results from the CSV file.
+3. **History**: saves and reads your results from the text file.
 
 [Back to menu](#menu)
 
@@ -218,8 +217,8 @@ The program has three main parts:
 | Problem | What to try |
 |---------|-------------|
 | `'python' is not recognized` | Python is not installed or not on PATH. Reinstall and tick "Add Python to PATH", or use `python3`. |
-| My results are not saved | Check that the folder the program is running from is not read-only, so it is allowed to create and write `typing_results.csv`. |
+| My results are not saved | Check that the folder the program is running from is not read-only, so it is allowed to create and write `typing_results.txt`. |
 | Accuracy looks very low | The comparison is position by position, so one missed letter early on can shift everything after it. Type carefully and do not skip characters. |
-| I want to reset my history | Delete `typing_results.csv`. A new one is created next time. |
+| I want to reset my history | Delete `typing_results.txt`. A new one is created next time. |
 
 [Back to menu](#menu)
