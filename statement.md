@@ -23,7 +23,7 @@ This project solves that problem with a terminal-based typing speed tester writt
 - Two test modes: **Sentence mode** (one sentence) and **Timed mode** (15, 30 or 60 seconds).
 - Random sentences generated from a large word list, with the sentence length (3 to 25 words) chosen by the user.
 - Calculation of words per minute (WPM), accuracy percentage and error count.
-- Saving every result to a CSV file and showing history, best score and average score.
+- Saving every result to a plain text file and showing history, best score and average score.
 - Input validation and error handling so bad input never crashes the program.
 - Documentation (README) for first-time Python users.
 
@@ -53,12 +53,12 @@ No prior programming knowledge is needed to run the program, only Python install
 
 1. **Test Engine:** runs Sentence mode and Timed mode, shows a countdown and displays random sentences of the chosen length.
 2. **Scoring Module:** compares what was typed with the target text and calculates WPM, accuracy and errors.
-3. **History Module:** saves each result to a CSV file, and shows the last 10 tests, the personal best and the average speed.
+3. **History Module:** saves each result to a plain text file, and shows the last 10 tests, the personal best and the average speed.
 
 **Input and output**
 
 - *Input:* menu choices, test mode, time limit, sentence length and the typed text.
-- *Output:* the target sentence, a results report (speed, accuracy, errors, time), a history table, and a saved CSV file you can open anytime to see all your stats.
+- *Output:* the target sentence, a results report (speed, accuracy, errors, time), a history table, and a saved text file you can open anytime to see all your stats.
 
 **Workflow**
 
@@ -70,7 +70,7 @@ Main menu, then choose mode, then choose length, then countdown, then type, then
 |---------|--------------------|
 | Performance | Precise timing with `time.perf_counter()`; light calculations only |
 | Usability | Simple numbered menus, countdown, clear results |
-| Reliability | CSV file is created automatically the first time it is needed; results are appended safely |
+| Reliability | Text file is created automatically the first time it is needed; results are appended safely |
 | Error handling | All menu and number inputs are validated with retry loops; save errors are caught without crashing |
 | Maintainability | Small single-purpose functions and settings kept as constants at the top of the file |
 | Resource efficiency | Runs in the terminal using only Python's built-in modules; history is read only when requested |
